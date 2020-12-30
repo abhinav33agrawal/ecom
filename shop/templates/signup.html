@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Signup
+{% endblock title %}
+
+{% block body %}
+<!-- <h1>Create Scc</h1> -->
+<div class="container mt-5">
+    <div class="p-4 m-4"> 
+        <div class="col-lg-5 mx-auto border rounded p-3 ">
+            <form action="signup" method="POST"> {% csrf_token %}
+                <h3 class="alert"> Create An Account</h3>
+                <div class="form-group mb-2">
+                {% if error %}
+              <div class="alert alert-danger" role="alert">
+                {{error}}
+              </div>
+                {% endif %}
+                  <label for="">First Name</label>
+                  <input type="text" name="firstname" value="{{data.firstname}}" id="" class="form-control form-control-sm" placeholder="">
+                </div>
+                <div class="form-group mb-2">
+                  <label for="">Last Name</label>
+                  <input type="text" name="lastname" id="" value="{{data.lastname}}" class="form-control form-control-sm" placeholder="" >
+                </div>
+
+                <div class="form-group mb-2">
+                  <label for="">Email</label>
+                  <input type="email" class="form-control form-control-sm" value="{{data.email}}" name="email" id="" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group mb-2">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control form-control-smS" name="password" id="" placeholder="***********">
+                </div>
+
+                <div class="form-group mb-2">
+                  <label for=""> Phone No.</label>
+                  <input type="number" name="phone" id="" class="form-control" value="{{data.phone}}" placeholder="1234567890">
+                </div>
+                <div class="form-group">
+                  <input type="submit" name="" id="" class="btn btn.sm btn-info" value="Create Account">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+</div>
+{% endblock body %}

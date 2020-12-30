@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+{% block style %}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+} 
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+{% endblock style %}
+
+{% block body %}
+<!-- <td> -->
+    
+<div class="container" style="width: 50%; margin-left: auto; margin-right: auto;" >
+    <!-- <div class="column"> -->
+    <div class="card" style="background-color: white;">
+    <h1 align=center>Developed By</h1>
+     <center> <img src="https://instagram.fbho4-2.fna.fbcdn.net/v/t51.2885-15/e35/97280398_242271953544263_7127478995120021371_n.jpg?_nc_ht=instagram.fbho4-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=vhwfrTKYVGUAX8MU101&tp=1&oh=7e8b25cd9b70595334ea5655b37f3df3&oe=5FFF2CDD " alt="Abhinav" style="width:40%;height: 40%;">
+     <div class="container">
+        <h2>Abhinav Agrawal</h2>
+        <p class="title">LNCTS(CSE) 2nd Year</p>
+        <p style="font-size: 36px;">Contact</p>
+<form action="">
+    <button class="fa fa-google-plus-square" formaction='mailto:abhinav22agrawal@gmail.com' style="font-size:100px ;padding:0px 50px"></button>
+    <button class="fa fa-instagram" formaction='https://www.instagram.com/abhi.2202agrawal/' style="font-size:100px;padding:0px 50px"></button>
+    <button class="fa fa-linkedin-square" formaction='https://www.linkedin.com/in/abhinav-agrawal-2421871ba' style="font-size:100px;padding:0px 50px"></button>
+
+</form>                
+        
+    </div></center>
+<!-- </div> -->
+</div>
+
+
+{% endblock body %}

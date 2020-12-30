@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+Orders
+{% endblock title %}
+{% block body %}
+{% load cart %}
+<div class="container">
+    <div class="border rounded p-4 m-4">
+        <p class="display-4 pl-4 ml-4">Orders</p>
+        
+    <hr>
+<table class="table" style="text-align: center;">
+    <thead>
+        <tr>
+            <th>S No.</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        {% comment %} <h1>{{product}}</h1> {% endcomment %}
+        <tr>
+            <td style="vertical-align: middle;">{{forloop.counter}} </td>
+            <td><img class="rounded-circle" style="height: 80px;" src="{{order.product.image.url}}" alt=""> </td>
+            <td style="vertical-align: middle;">{{order.product.name}}</td>
+            <td style="vertical-align: middle;">{{order.date}}</td>
+            <td style="vertical-align: middle;">₹{{order.product.price}}</td>
+            <td style="vertical-align: middle;">{{order.quantity}}</td>
+            <td style="vertical-align: middle;">₹{{order.quantity|multiply:order.product.price}}</td>
+            {% if order.status %}
+            <td><div class="badge rounded-pill bg-success" style="margin-top: 30px;" >Accepted </div></td>
+            {% else %}
+
+            <td><div class="badge rounded-pill bg-warning text-dark" style="margin-top: 30px;" >Pending </div></td>
+            {% endif %}
+            <!-- {% if order.status %}
+                    <td><small style="vertical-align: middle;" class="badge badge-success">Completed</small></td>
+                    {%else%}
+                    <td><small style="vertical-align: middle;" class="badge badge-warning">Pending</small></td>
+                    {% endif %} -->
+        </tr>
+
+        {% endfor %}
+        
+    </tbody>
+    
+</table>
+
+</div>
+
+
+</div>
+
+
+
+{% endblock body %}

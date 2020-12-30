@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block body %}
+<!-- <h1>Create Scc</h1> -->
+<div class="container mt-5">
+    <div class="p-4 m-4"> 
+        <div class="col-lg-5 mx-auto border rounded p-3 ">
+            <form action="login" method="POST"> {% csrf_token %}
+                <h3 class="alert"> Login</h3>
+                <div class="form-group mb-2">
+                {% if error %}
+              <div class="alert alert-danger" role="alert">
+                {{error}}
+              </div>
+                {% endif %}
+
+
+                <div class="form-group mb-2">
+                  <label for="">Email</label>
+                  <input type="email" class="form-control form-control-sm" value="{{email}}" name="email" id="" placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group mb-2">
+                  <label for="">Password</label>
+                  <input type="password" class="form-control form-control-sm" name="password" id="" placeholder="***********">
+                </div>
+
+                <div class="form-group">
+                  <input type="submit" name="" id="" class="btn btn.sm btn-info" value="Login">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+</div>
+{% endblock body %}
